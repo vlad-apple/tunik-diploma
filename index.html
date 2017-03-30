@@ -17,6 +17,7 @@
     <![endif]-->
 </head>
 <body>
+<!--Шапка-->
 <div class="navbar-wrapper">
     <div class="container-fluid">
         <nav class="navbar navbar-fixed-top">
@@ -71,12 +72,61 @@
         </nav>
     </div>
 </div>
+<!--Уникальный контент-->
+<div class="container main-section">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <a href="#" class="btn btn-primary btn-sm disabled pull-right editor-label" style="background-color: #61a663; border-color: #61a663;" role="button">HTML</a>
+                <div id="editor" class="img-rounded">
 
+                </div>
+                <hr>
+            </div>
+            <div class="col-md-12">
+                <a href="#" class="btn btn-primary btn-sm disabled pull-right editor-label" style="background-color: #61a663; border-color: #61a663;" role="button">CSS</a>
+                <div id="editor1" class="img-rounded">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 browser img-rounded">
+            <div class="row">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#">Первое задание</a></li>
+                </ul>
+                <iframe></iframe>
+                <div class="well well-position" style="margin-bottom: 0px"></div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#myModal" style="margin: 17px 0 0 4px"><i class="fa fa-bookmark" aria-hidden="true"></i> Теория</button>
+        <button type="button" class="btn btn-default btn-md pull-right"  style="margin: 17px 5px 0 0">Следующее задание    <i class="fa fa-caret-right fa-lg" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-primary btn-md pull-right"  style="margin-top: 17px">Проверка</button>
+        <!--Модальное окно-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-bookmark" aria-hidden="true"></i> Теория</h4>
+                    </div>
+                    <div class="modal-body">
+                        Какая теория?! D: Гугли, инвалид!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Скрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.js"></script>
 <!--Ace js editor-->
 <script src="https://cdn.jsdelivr.net/g/ace@1.2.3(min/ace.js+min/ext-emmet.js+min/mode-html.js)" charset="UTF-8" type="text/javascript"></script>
+<script src="js/ace1.js" type="text/javascript"></script>
+<script src="js/ace.js" type="text/javascript"></script>
 </body>
 </html>

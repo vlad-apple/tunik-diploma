@@ -1,0 +1,57 @@
+.main-section{
+    margin-top: 90px;
+}
+#editor {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height:320px;
+    border: 5px solid rgba(97, 166, 99, 0.5);
+}
+
+#editor1 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height:320px;
+    border: 5px solid rgba(97, 166, 99, 0.5);
+}
+
+.browser {
+
+    border: 5px solid rgba(97, 166, 99, 0.5);
+}
+
+
+
+.well-position{
+    height:150px;
+}
+
+.editor-label{
+    position: absolute;
+    z-index: 2;
+}
+iframe {
+    height: 420px;
+    width: 100%;
+    border: none;
+    background-color: #ffffff;
+}
+
+.btn-primary{
+    background-color: rgba(153, 27, 166, 0.89);
+    border-color: rgba(153, 27, 166, 0.89);;
+}
+
+/*p{
+    font-family:Arial;
+    font-size:24px;
+    font-style:italic;
+    background-color:#991BA6;
+    color:white;
+}*/
