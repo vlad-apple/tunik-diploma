@@ -10,7 +10,8 @@ function acejs1() {
         // Вывод содержимого редактора в iframe
         doc.head.lastChild.innerHTML = editor.getValue();
     });
-
+    editor.setValue("p{\n\tfont-family:Arial;\n\tfont-size:24px;\n\tfont-style:italic;\n\t" +
+    "background-color:#991BA6;\n\tcolor:white;\n}")
 }
 
 acejs1();
