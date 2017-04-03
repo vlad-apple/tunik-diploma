@@ -10,7 +10,8 @@ var currentContent = '';
 editor.getSession().on('change', function() {
     currentContent = editor.getValue();
 });
-
+editor.setValue('describe("Проверка", function() {\n\tit("Статус задания", function() {\n\t\t' +
+'assert.equal(pow(4,6), 4096);\n\t});\n})')
 /*var iframe = document.querySelector('iframe');
 var doc = iframe.contentWindow.document;
 var mochaDiv = doc.createElement('div');
