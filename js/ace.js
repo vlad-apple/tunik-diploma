@@ -1,15 +1,25 @@
 function acejs() {
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/chaos");
-    editor.getSession().setMode("ace/mode/html");
-    var iframe = document.querySelector('iframe');
-    var doc = iframe.contentWindow.document;
+    editor.getSession().setMode("ace/mode/javascript");
+    var powScript = document.createElement('script');
+    powScript.innerHTML = 'function pow(x, n) {\n\tvar result = 1;\n\tfor (var i = 0; i < n; i++) {' +
+            '\n\t\tresult *= x;\n\t}\n\treturn result;\n}';
+    document.body.appendChild(powScript);
+    var test = document.createElement('script');
+    document.body.appendChild(test);
     editor.getSession().on('change', function() {
-        // Вывод содержимого редактора в iframe
-        doc.body.innerHTML = editor.getValue();
+        document.body.lastChild.innerHTML = editor.getValue();
     });
-    editor.setValue("<!DOCTYPE html>\n<html>\n\t<head>\n\t</head>\n\t<body>\n\t\t<p>Какой-то дефолтный текст</p> " +
-        "\n\t</body>\n</html>");
 }
 
 acejs();
+
+/*
+describe("Проверка", function() {
+
+    it("Статус задания", function() {
+        assert.equal(pow(4,6), eval(currentContent));
+    });
+
+});*/
