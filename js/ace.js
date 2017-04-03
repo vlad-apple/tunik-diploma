@@ -1,25 +1,43 @@
-function acejs() {
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/chaos");
-    editor.getSession().setMode("ace/mode/javascript");
-    var powScript = document.createElement('script');
-    powScript.innerHTML = 'function pow(x, n) {\n\tvar result = 1;\n\tfor (var i = 0; i < n; i++) {' +
-            '\n\t\tresult *= x;\n\t}\n\treturn result;\n}';
-    document.body.appendChild(powScript);
-    var test = document.createElement('script');
-    document.body.appendChild(test);
-    editor.getSession().on('change', function() {
-        document.body.lastChild.innerHTML = editor.getValue();
-    });
-}
+var editor = ace.edit("editor");
+editor.setTheme("ace/theme/chaos");
+editor.getSession().setMode("ace/mode/javascript");
+/*создаем скрипт для тестируемоего кода*/
+var powScript = document.createElement('script');
+powScript.innerHTML = 'function pow(x, n) {\n\tvar result = 1;\n\tfor (var i = 0; i < n; i++) {' +
+        '\n\t\tresult *= x;\n\t}\n\treturn result;\n}';
+document.body.appendChild(powScript);
+var currentContent = '';
+editor.getSession().on('change', function() {
+    currentContent = editor.getValue();
+});
 
-acejs();
+/*var iframe = document.querySelector('iframe');
+var doc = iframe.contentWindow.document;
+var mochaDiv = doc.createElement('div');
+mochaDiv.id = 'mocha';
+doc.body.appendChild(mochaDiv);*/
+
 
 /*
 describe("Проверка", function() {
 
     it("Статус задания", function() {
-        assert.equal(pow(4,6), eval(currentContent));
+        assert.equal(pow(4,6), 544);
     });
 
 });*/
+var mochas ='';
+var well = document.getElementById('well');
+function startSpec() {
+    if (document.getElementById('mocha')){
+        mochas = document.getElementById('mocha');
+        mochas.remove();
+        mochas = document.createElement('div');
+        mochas.id = 'mocha';
+        well.appendChild(mochas);
+    }
+    eval(currentContent);
+    mocha.run();
+}
+
+
